@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Mook from './Mook'
+import { myBooksArray } from './data/data'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    return <section className='minibook'>
+                {
+                    myBooksArray.map((book) => {
+                        // const { id, title, author, img }= book
+                        return (
+                        // <Mook id={id} title={title} author={author} img={img} />
+                        <Mook key={book.id} {...book}/>
+                        )
+                    })}
+            </section>
+
 }
+
 
 export default App;
